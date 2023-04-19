@@ -10,4 +10,19 @@ public class Order {
     this.quantity = quantity;
     this.totalPrice = totalPrice;
   }
+  public Customer getCustomer() {
+    return customer;
+  }
+
+  public Drink getDrink() {
+    return drink;
+  }
+
+  public int getQuantity() {
+    return quantity;
+  }
+
+  public double getTotalPrice() {
+    return totalPrice;
+  }
 }

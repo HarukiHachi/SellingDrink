@@ -8,4 +8,16 @@ public class Customer {
     this.email = email;
     this.isVip = isVip;
   }
+
+  public String getName() {
+    return name;
+  }
+
+  public String getEmail() {
+    return email;
+  }
+
+  public boolean isVip() {
+    return isVip;
+  }
 }
