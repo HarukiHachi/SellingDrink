@@ -21,3 +21,8 @@ This is a project making by 3 mans:
     GUI.java
     HappyHourDrinkStategy.java
     Payment.java
+
+# How to run
+    1. Download all sourcecode to computer
+    2. Use VSCode or any code editor that can run JAVA
+    3. Run the main file "GUI.java"
