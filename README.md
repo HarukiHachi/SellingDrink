@@ -14,6 +14,8 @@ This is a project making by 3 mans:
     BasicDrinkStrategy.java
     Drink.java
     DrinkContext.java
+    DrinkController.java
+    DrinkModel.java
     DrinkObserver.java
     DrinkPrice.java
     DrinkSingleton.java
