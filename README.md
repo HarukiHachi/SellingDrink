@@ -26,5 +26,6 @@ This is a project making by 3 mans:
 
 # How to run
     1. Download all sourcecode to computer
-    2. Use VSCode or any code editor that can run JAVA
-    3. Run the main file "GUI.java"
+    2. Extract files from .zip (if needed)
+    3. Use VSCode or any code editor that can run JAVA
+    4. Run the main file "GUI.java"
