@@ -10,6 +10,7 @@ public class AddOnSingleton {
         addOns.add(new AddOn("Milk", new AddOnPrice(0.50)));
         addOns.add(new AddOn("Sugar", new AddOnPrice(0.25)));
         addOns.add(new AddOn("Whipped Cream", new AddOnPrice(0.75)));
+        addOns.add(new AddOn("Banana", new AddOnPrice(2)));
     }
 
     public static AddOnSingleton getInstance() {

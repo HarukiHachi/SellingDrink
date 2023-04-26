@@ -11,6 +11,7 @@ public class DrinkSingleton {
         drinks.add(new Drink("Coffee", new DrinkPrice(2.50)));
         drinks.add(new Drink("Tea", new DrinkPrice(2.00)));
         drinks.add(new Drink("Soda", new DrinkPrice(1.50)));
+        drinks.add(new Drink("CockTail", new DrinkPrice(2)));
     }
 
     public static DrinkSingleton getInstance() {
