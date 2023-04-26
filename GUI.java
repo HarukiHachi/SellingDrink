@@ -28,6 +28,8 @@ public class GUI extends JFrame implements ActionListener, DrinkObserver {
     super("Selling Drink");
     orderHistory = new ArrayList < > (); // initialize order history
 
+    
+
     // Initialize drinks and add-ons
     drinks = DrinkSingleton.getInstance().getDrinks();
     addOns = AddOnSingleton.getInstance().getAddOns();
@@ -56,7 +58,7 @@ public class GUI extends JFrame implements ActionListener, DrinkObserver {
     pricePanel.add(priceLabel);
 
     JPanel amountPaidPanel = new JPanel(new FlowLayout());
-    amountPaidPanel.add(new JLabel("User will have $10 to pay"));
+    amountPaidPanel.add(new JLabel("User will have $15 to pay"));
 
     JPanel buttonPanel = new JPanel(new FlowLayout());
     JButton resetButton = new JButton("Reset");
@@ -110,13 +112,27 @@ public class GUI extends JFrame implements ActionListener, DrinkObserver {
   @Override
   public void actionPerformed(ActionEvent e) {
     if (e.getSource() == drinkComboBox) {
-      updatePrice(10.0);
+      updatePrice(15.0);
     } else if (e.getSource() instanceof JCheckBox) {
-      updatePrice(10.0);
+      updatePrice(15.0);
     } else if (e.getActionCommand().equals("Reset")) {
       reset();
     }
   }
+  public JComboBox<Drink> getDrinkComboBox() {
+    return drinkComboBox;
+  }
+  public int getAddOnCheckBoxIndex(JCheckBox checkBox) {
+    return addOnCheckBoxes.length;
+  }
+  public double getAmountPaid() {
+    return getAmountPaid();
+  }
+  JLabel changeLabel = new JLabel();
+  public void updateChangeLabel(double change) {
+    changeLabel.setText(String.format("%.2f", change));
+  }
+  
 
   private boolean isHappyHour() {
     Calendar now = Calendar.getInstance();
@@ -124,7 +140,7 @@ public class GUI extends JFrame implements ActionListener, DrinkObserver {
     return (hour >= 17 && hour < 19); // Happy hour is from 5pm to 7pm
   }
 
-  private void updatePrice(double amountPaid) {
+  public void updatePrice(double amountPaid) {
     Drink selectedDrink = (Drink) drinkComboBox.getSelectedItem();
     if (isHappyHour()) {
       selectedDrink.setStrategy(happyHourStrategy);
@@ -163,11 +179,26 @@ public class GUI extends JFrame implements ActionListener, DrinkObserver {
     for (JCheckBox checkBox: addOnCheckBoxes) {
       checkBox.setSelected(false);
     }
+    
+    JPanel pricePanel = (JPanel) priceLabel.getParent();
+    Component[] components = pricePanel.getComponents();
+    for (Component component: components) {
+      if (component instanceof JLabel && ((JLabel) component).getText().startsWith("Change:")) {
+        pricePanel.remove(component);
+        break;
+      }
+    }
+    
     priceLabel.setText("$0.00");
   }
 
+
+
   public static void main(String[] args) {
     new GUI();
+  }
+
+  public void updateAddOnCheckBoxes(List<AddOn> selectedAddOns) {
   }
 }
 // new Order class

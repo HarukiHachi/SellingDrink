@@ -5,7 +5,6 @@ public class Drink {
     private String name;
     private DrinkPrice price;
     private List<AddOn> addOns;
-    private DrinkStrategy strategy;
     public Drink(String name, DrinkPrice price) {
         this.name = name;
         this.price = price;
@@ -46,6 +45,9 @@ public class Drink {
     }
 
     public void setStrategy(DrinkStrategy strategy) {
-        this.strategy = strategy;
+    }
+
+    public void clearAddOns() {
+        addOns.clear();
     }
 }
