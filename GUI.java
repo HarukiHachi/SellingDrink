@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
-public class GUI extends JFrame implements ActionListener, DrinkObserver {
+public class GUI extends JFrame implements ActionListener {
   private List < Drink > drinks;
   private List < AddOn > addOns;
   private JComboBox < Drink > drinkComboBox;
@@ -18,11 +18,7 @@ public class GUI extends JFrame implements ActionListener, DrinkObserver {
   DrinkStrategy basicStrategy = new BasicDrinkStrategy();
   DrinkStrategy happyHourStrategy = new HappyHourDrinkStrategy();
 
-  @Override
-  public void update(Drink drink) {
-    // Update the drinkComboBox to reflect the new drink
-    drinkComboBox.setSelectedItem(drink);
-  }
+ 
 
   public GUI() {
     super("Selling Drink");
